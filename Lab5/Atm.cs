@@ -15,11 +15,15 @@ public class Atm
 
     public void InsertCard(Card card)
     {
+        if (card is null)
+            throw new ArgumentNullException(nameof(card), "Card cannot be null");
         AtmState.InsertCard(card);
     }
 
     public void InsertPin(Pin pinCode)
     {
+        if (pinCode is null)
+            throw new ArgumentNullException(nameof(pinCode), "Pin cannot be null");
         AtmState.InsertPin(pinCode);
     }
 
